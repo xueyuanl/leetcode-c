@@ -2,11 +2,12 @@
 // Created by hsuehyuan li on 2019-04-19.
 //
 #include <stdlib.h>
-
+#include "common/array.h"
 
 
 int main(int argc, const char *argv[]) {
-    int test[] = {5, 4, 3, 2, 1};
-    int returnSize = 0;
+    ArrayList *array_list = arraylist_create();
+    int x = 0;
+    ArrayList *a = arraylist_add(array_list, &x);
 
 }
