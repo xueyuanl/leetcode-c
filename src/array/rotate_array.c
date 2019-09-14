@@ -1,8 +1,8 @@
 //
-// Created by hsuehyuan li on 2019-04-19.
+// Created by hsuehyuan li on 2019-09-14.
 //
+
 #include <stdlib.h>
-#include "common/array.h"
 
 void rotate(int *nums, int numsSize, int k) {
     k = k % numsSize;
@@ -18,11 +18,4 @@ void rotate(int *nums, int numsSize, int k) {
     for (int l = 0; l< k; ++l) {
         *(nums + l) = *(tail + l);
     }
-}
-
-int main(int argc, const char *argv[]) {
-    int a[] = {1,2,3,4,5,6,7 };
-    rotate(a, 7, 3);
-
-
 }
