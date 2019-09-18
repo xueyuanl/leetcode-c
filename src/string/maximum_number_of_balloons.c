@@ -1,10 +1,8 @@
 //
-// Created by hsuehyuan li on 2019-04-19.
+// Created by hsuehyuan li on 2019-09-15.
 //
+
 #include <stdlib.h>
-#include "common/array.h"
-#include <string.h>
-#include <stdio.h>
 
 int maxNumberOfBalloons(char * text){
     int alphabet[26] = {0};
@@ -18,11 +16,11 @@ int maxNumberOfBalloons(char * text){
     int min = 1000000;
     for (int i = 0; i < 5; ++i) {
         if(balloon[i] == 11) {
-            if(alphabet[balloon[i]] / 2 < min) min = alphabet[balloon[i]] / 2;
+            if((alphabet[balloon[i]] - 1) / 2 < min) min = alphabet[balloon[i]];
             continue;
         }
         if(balloon[i] == 14) {
-            if(alphabet[balloon[i]] / 2 < min) min = alphabet[balloon[i]] / 2;
+            if((alphabet[balloon[i]] - 1) / 2 < min) min = alphabet[balloon[i]];
             continue;
         }
         if(alphabet[balloon[i]] < min) min = alphabet[balloon[i]];
@@ -30,11 +28,5 @@ int maxNumberOfBalloons(char * text){
     }
 
     return min;
-
-}
-
-int main(int argc, const char *argv[]) {
-    maxNumberOfBalloons("balon");
-
 
 }

@@ -9,13 +9,13 @@
 
 int firstUniqChar(char *s) {
     int alphabet[26] = {0};
-    int len = strlen(s);
-    for (int i = 0; i < len; ++i) {
-        alphabet[*(s + i) - 'a'] += 1;
+    char *p = s;
+    while (*p != '\0') {
+        alphabet[*p - 'a'] += 1;
+        p ++;
     }
-
-    for (int i = 0; i < len; ++i) {
-        if (alphabet[*(s + i) - 'a'] == 1) return i;
+    for (int i = 0, len = strlen(s); i < len; ++i) {  // the len should be init in the first condition.
+        if (alphabet[*(s+ i) - 'a'] == 1) return i;
     }
     return -1;
 }
